@@ -1,0 +1,24 @@
+LeetCode Problem
+2Sum:
+
+I have solved the leetcode's 2Sum problem ( LeetCode ) using Java - Hashmap
+In order to get the Time Complexity under O(n^2), I have checked if ( Target - CurrentElement ) is avalable in the HashMap,
+If it is available I have simply returned the indexes of current element and the key of respective found match in the HashMap.
+If its not found in the HashMap I have added the key and element in the map for further checking.
+
+
+#CODE
+
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        Map<Integer, Integer> mp = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            int diff = target - nums[i];
+            if (mp.containsKey(diff)) {
+                return new int[] { mp.get(diff), i };
+            }
+            mp.put(nums[i], i);
+        }
+    throw new IllegalArgumentException("No match found"); // added this just the sake of Leetcode's requirement
+    }
+}
