@@ -1,0 +1,19 @@
+https://leetcode.com/problems/find-the-integer-added-to-array-i/description/
+class Solution {
+public:
+    int addedInteger(vector<int>& nums1, vector<int>& nums2) {
+        int s1=nums1[0];
+        int s2=nums2[0];
+        for(int i=1;i<nums1.size();i++){
+            if(nums1[i]<s1)
+            {
+                s1=nums1[i];
+            }
+            if(nums2[i]<s2)
+            {
+                s2=nums2[i];
+            }
+        } 
+        return s2-s1;
+    }
+};
