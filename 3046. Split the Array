@@ -1,0 +1,16 @@
+https://leetcode.com/problems/split-the-array/description/
+
+class Solution {
+public:
+    bool isPossibleToSplit(vector<int>& nums) {
+        map<int,int>m;
+        for(auto i:nums){
+            m[i]++;
+        }
+        for(auto j:m){
+            if(j.second>2)
+                return false;
+        }
+    return true;
+    }
+};
